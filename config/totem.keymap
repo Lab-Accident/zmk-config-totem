@@ -63,34 +63,44 @@
         };
     };
 
-/ {
-    behaviors {
-        sqt_lpar: apostrophe_left_paren {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp APOSTROPHE>, <&kp LEFT_PARENTHESIS>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-        };
-        dqt_rpar: dbl_quote_right_paren {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOUBLE_QUOTES>, <&kp RIGHT_PARENTHESIS>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-        };
-        com_semi: comma_semi_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-        };
-        dot_col: dot_colon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+    / {
+        behaviors {
+            sqt_lpar: apostrophe_left_paren {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp APOSTROPHE>, <&kp LEFT_PARENTHESIS>;
+
+                mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+            };
+
+            dqt_rpar: dbl_quote_right_paren {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp DOUBLE_QUOTES>, <&kp RIGHT_PARENTHESIS>;
+
+                mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+            };
+
+            com_semi: comma_semi_colon {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp COMMA>, <&kp SEMICOLON>;
+
+                mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+            };
+
+            dot_col: dot_colon {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp DOT>, <&kp COLON>;
+
+                mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+            };
         };
     };
-};
+
+    behaviors {
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -114,10 +124,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp B           &kp Y       &kp O        &kp U        &gresc       &gresc   &kp L         &kp D        &kp W       &kp V
-         &mt LEFT_GUI C  &mt LALT I  &mt LSHFT E  &mt LCTRL A  &gresc       &gresc   &mt RCTRL H   &mt RSHFT T  &mt LALT N  &mt RGUI Q
-&kp TAB  &kp G           &kp X       &kp J        &kp K        &kp MINUS    &gresc   &kp R         &kp M        &kp F       &kp P       &kp Z
-                                     &kp DEL      &lt 2 TAB    &kp SPACE    &kp RET  &lt 1 ESCAPE  &kp BSPC
+         &kp B           &kp Y       &kp O        &kp U        &sqt_lpar    &dqt_rpar  &kp L         &kp D        &kp W       &kp V
+         &mt LEFT_GUI C  &mt LALT I  &mt LSHFT E  &mt LCTRL A  &com_semi    &dot_col   &mt RCTRL H   &mt RSHFT T  &mt LALT N  &mt RGUI Q
+&kp TAB  &kp G           &kp X       &kp J        &kp K        &kp MINUS    &gresc     &kp R         &kp M        &kp F       &kp P       &kp Z
+                                     &kp DEL      &lt 2 TAB    &kp SPACE    &kp RET    &lt 1 ESCAPE  &kp BSPC
             >;
         };
 
