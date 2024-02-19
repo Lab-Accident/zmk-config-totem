@@ -96,6 +96,7 @@
 
                 mods = <(MOD_LSFT|MOD_RSFT)>;
             };
+
             qmark_exclam: question_exclamation {
                 compatible = "zmk,behavior-mod-morph";
                 #binding-cells = <0>;
@@ -131,10 +132,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp B           &kp Y       &kp O        &kp U        &sqt_lpar    &dqt_rpar  &kp L         &kp D        &kp W       &kp V
-         &mt LEFT_GUI C  &mt LALT I  &mt LSHFT E  &mt LCTRL A  &com_semi    &dot_col   &mt RCTRL H   &mt RSHFT T  &mt LALT N  &mt RGUI Q
-&kp TAB  &kp G           &kp X       &kp J        &kp K        &kp MINUS    &gresc     &kp R         &kp M        &kp F       &kp P       &kp Z
-                                     &kp DEL      &lt 2 TAB    &kp SPACE    &kp RET    &lt 1 ESCAPE  &kp BSPC
+         &kp B           &kp Y       &kp O        &kp U        &sqt_lpar    &dqt_rpar      &kp L         &kp D        &kp W       &kp V
+         &mt LEFT_GUI C  &mt LALT I  &mt LSHFT E  &mt LCTRL A  &com_semi    &dot_col       &mt RCTRL H   &mt RSHFT T  &mt LALT N  &mt RGUI Q
+&kp TAB  &kp G           &kp X       &kp J        &kp K        &kp MINUS    &qmark_exclam  &kp R         &kp M        &kp F       &kp P       &kp Z
+                                     &kp DEL      &lt 2 TAB    &kp SPACE    &kp RET        &lt 1 ESCAPE  &kp BSPC
             >;
         };
 
