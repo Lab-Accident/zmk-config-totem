@@ -65,25 +65,25 @@
 
 / {
     behaviors {
-        gresc: apostrophe_left_paren {
+        sqt_lpar: apostrophe_left_paren {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp APOSTROPHE>, <&kp LEFT_PARENTHESIS>;
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
-        gresc: dbl_quote_right_paren {
+        dqt_rpar: dbl_quote_right_paren {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOUBLE_QUOTES>, <&kp RIGHT_PARENTHESIS>;
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
-        gresc: comma_semi_colon {
+        com_semi: comma_semi_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
             mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
-        gresc: dot_colon {
+        dot_col: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
