@@ -63,6 +63,17 @@
         };
     };
 
+/ {
+    behaviors {
+        gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp APOSTROPHE>, <&kp LEFT_PARENTHESIS>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        };
+    };
+};
+
     keymap {
         compatible = "zmk,keymap";
 
