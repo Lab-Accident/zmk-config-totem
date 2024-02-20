@@ -103,6 +103,27 @@
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        lh_pht: left_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31>;    // <---[[right-hand keys]]
+        };
+
+        rh_pht: right_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25>;    // <---[[left-hand keys]]
+        };
+
     };
 
     keymap {
@@ -117,20 +138,20 @@
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃     Q     ┃     W     ┃     F     ┃     P     ┃     G     ┃   ┃     J     ┃     L     ┃     U     ┃     Y     ┃     ;     ┃
+            //             ┃    bB     ┃    yY     ┃    oO     ┃    uU     ┃    '(     ┃   ┃    ")     ┃    lL     ┃    dD     ┃    wW     ┃    vV     ┃
             //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃     A     ┃     R     ┃     S     ┃     T     ┃     D     ┃   ┃     H     ┃     N     ┃     E     ┃     I     ┃     O     ┃
+            //             ┃    cC     ┃    iI     ┃    eE     ┃    aA     ┃    ,;     ┃   ┃    .:     ┃    hH     ┃    tT     ┃    nN     ┃    qQ     ┃
             // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃     Q     ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     K     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
+            // ┃    TAB    ┃    gG     ┃    xX     ┃    jJ     ┃    kK     ┃    -_     ┃   ┃    ?!     ┃    rR     ┃    mM     ┃    fF     ┃    pP     ┃    zZ     ┃
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃    DEL    ┃    TAB    ┃    SPC    ┃   ┃   ENTER   ┃           ┃   BSPC    ┃
+            //                                     ┃    DEL    ┃    TAB    ┃    SPC    ┃   ┃   ENTER   ┃    ESC    ┃   BSPC    ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp B           &kp Y       &kp O        &kp U        &sqt_lpar    &dqt_rpar      &kp L         &kp D        &kp W       &kp V
-         &mt LEFT_GUI C  &mt LALT I  &mt LSHFT E  &mt LCTRL A  &com_semi    &dot_col       &mt RCTRL H   &mt RSHFT T  &mt LALT N  &mt RGUI Q
-&kp TAB  &kp G           &kp X       &kp J        &kp K        &kp MINUS    &qmark_exclam  &kp R         &kp M        &kp F       &kp P       &kp Z
-                                     &kp DEL      &lt 2 TAB    &kp SPACE    &kp RET        &lt 1 ESCAPE  &kp BSPC
+         &kp B               &kp Y           &kp O            &kp U            &sqt_lpar    &dqt_rpar      &kp L             &kp D            &kp W           &kp V
+         &lh_pht LEFT_GUI C  &lh_pht LALT I  &lh_pht LSHFT E  &lh_pht LCTRL A  &com_semi    &dot_col       &rh_pht RCTRL H   &rh_pht RSHFT T  &rh_pht LALT N  &rh_pht RGUI Q
+&kp TAB  &kp G               &kp X           &kp J            &kp K            &kp MINUS    &qmark_exclam  &kp R             &kp M            &kp F           &kp P           &kp Z
+                                             &kp DEL          &lt 2 TAB        &kp SPACE    &kp RET        &lt 1 ESCAPE      &kp BSPC
             >;
         };
 
