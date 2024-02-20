@@ -149,7 +149,7 @@
 
             bindings = <
          &kp B               &kp Y           &kp O            &kp U            &sqt_lpar    &dqt_rpar      &kp L             &kp D            &kp W           &kp V
-         &lh_pht LEFT_GUI C  &lh_pht LALT I  &lh_pht LSHFT E  &lh_pht LCTRL A  &com_semi    &dot_col       &rh_pht RCTRL H   &rh_pht RSHFT T  &rh_pht LALT N  &rh_pht RGUI Q
+         &lh_pht LEFT_GUI C  &lh_pht LALT I  &lh_pht LCTRL E  &lh_pht LSHFT A  &com_semi    &dot_col       &rh_pht RSHFT H   &rh_pht RCTRL T  &rh_pht LALT N  &rh_pht RGUI Q
 &kp TAB  &kp G               &kp X           &kp J            &kp K            &kp MINUS    &qmark_exclam  &kp R             &kp M            &kp F           &kp P           &kp Z
                                              &kp DEL          &lt 2 TAB        &kp SPACE    &kp RET        &lt 1 ESCAPE      &kp BSPC
             >;
